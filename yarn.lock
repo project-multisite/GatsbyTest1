@@ -6558,6 +6558,14 @@
     "@types/sharp" "^0.30.0"
     "sharp" "^0.30.3"
 
+"gatsby-source-apostrophe@^1.0.1":
+  "integrity" "sha512-QqpcYl9Z8IpQ/zFJbLvfObwFKYkK+4jyzdawZseTAa9ROGqBDBZC/K46xvWmM4LRnAuNgDn+8XjGoUbtn97Riw=="
+  "resolved" "https://registry.npmjs.org/gatsby-source-apostrophe/-/gatsby-source-apostrophe-1.0.1.tgz"
+  "version" "1.0.1"
+  dependencies:
+    "camelcase" "^6.2.0"
+    "node-fetch" "^2.6.1"
+
 "gatsby-source-contentful@^6.0.0-next", "gatsby-source-contentful@^6.1.4":
   "integrity" "sha512-YiarFhtaDmAhlJFu9Hjw8CuYC0NQqi+OkJY8OwOmVJL9fWIUHtVCp092tG793hnlSPbq0fGRP6cZqpLU0XjwNg=="
   "resolved" "https://registry.npmjs.org/gatsby-source-contentful/-/gatsby-source-contentful-6.1.4.tgz"

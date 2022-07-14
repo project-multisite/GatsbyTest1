@@ -24,6 +24,7 @@
     "gatsby-plugin-sharp": "^4.18.1",
     "gatsby-plugin-sitemap": "^5.18.1",
     "gatsby-remark-images-contentful": "^5.18.0",
+    "gatsby-source-apostrophe": "^1.0.1",
     "gatsby-source-contentful": "^6.1.4",
     "gatsby-source-filesystem": "^4.18.1",
     "gatsby-source-prismic": "^5.2.9",

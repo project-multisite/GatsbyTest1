@@ -8,9 +8,35 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 export default function Home({ data }) {
   const { title, description } = data.site.siteMetadata
+  const programs = data.allAposProgram.nodes
 
   return (
     <body class="body">
+      <div>
+        {programs.map(item => {
+          return (
+            <section className="mb-6" key={item.id}>
+              <h2 className="text-xl">{item.title}</h2>
+              <ul>
+                {/*
+                  The following pattern is a conditional, checking if we 
+                  have a `cost` value. We'll continue to use this in other places.
+                */}
+                {item.cost &&
+                  <li>Price: ${item.cost}</li>
+                }
+                {item.ageGroup &&
+                  <li>Ages: {ageGroupToRange(item.ageGroup)}</li>
+                }
+                <li>
+                  Dates: {formatDate(item.startDate)} to {formatDate(item.endDate)}
+                </li>
+              </ul>
+              {item.description && <p className="mt-3">{item.description}</p>}
+            </section>
+          )
+        })}
+      </div>
       <Helmet>
         <title>ENT Summer Camp</title>
       </Helmet>
@@ -40,6 +66,17 @@ export default function Home({ data }) {
 
 export const pageQuery = graphql`
   query MetadataQuery {
+    allAposProgram {
+      nodes {
+        ageGroup
+        id
+        title
+        cost
+        description
+        startDate
+        endDate
+      }
+    }
     site {
       siteMetadata {
         title
@@ -52,3 +89,14 @@ export const pageQuery = graphql`
     }
   }
 `
+
+function formatDate(date) {
+  const obj = new Date(date)
+  return obj.toLocaleDateString()
+}
+
+function ageGroupToRange(group) {
+  return group.split("to")
+    .map(n => parseInt(n))
+    .join(" - ")
+}
