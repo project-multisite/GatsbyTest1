@@ -1,0 +1,13 @@
+.footer{
+    text-align: center;
+    position: relative;
+}
+
+.links, .title{
+    text-align: center;
+}
+
+html, .body{
+    padding: 3px;
+    background-color: lightgray;
+}
